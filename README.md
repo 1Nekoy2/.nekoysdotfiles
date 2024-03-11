@@ -12,14 +12,9 @@ pacman -S git stow nvim tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit
 
 ## Installation
 
-First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-git clone git@github.com/dreamsofautonomy/dotfiles.git
-```
-
-```
-cd dotfiles
+git clone --recurse-submodules https://github.com/1Nekoy2/dotfiles.git ~/dotfiles && cd ~/dotfiles
 ```
 
 then use GNU stow to create symlinks
@@ -27,3 +22,7 @@ then use GNU stow to create symlinks
 ```
 stow .
 ```
+
+## Source
+
+https://www.youtube.com/watch?v=y6XCebnB9gs&t=223s
