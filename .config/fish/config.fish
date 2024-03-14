@@ -21,6 +21,7 @@ if status is-interactive
     alias lg="lazygit"
     alias btop="bpytop"
     alias nf="neofetch | lolcat"
+    alias catsay="fortune | cowsay -f kitty | lolcat"
     
     #fuzzy finder themeing 
     set -Ux FZF_DEFAULT_OPTS "\

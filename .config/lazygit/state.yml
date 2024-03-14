@@ -1,11 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/nekoy/dotfiles
-- /run/media/nekoy/Nekoystuff/linuxstuff/dotfiles
 - /home/nekoy/.config/nvim
 - /home/nekoy/dotfiles/.config/nvim
 - /home/nekoy/github/grub
-- /home/nekoy/.config/hypr
 startuppopupversion: 5
 customcommandshistory:
 - nvim
