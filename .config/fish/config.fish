@@ -13,6 +13,7 @@ if status is-interactive
 #    fish_config theme save "Catppuccin Mocha"
 
     # aliases
+    alias icat="kitten icat"
     alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
     alias la="lsd -hA --group-dirs first"
     alias l="lsd"

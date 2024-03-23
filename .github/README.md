@@ -2,6 +2,10 @@
 
 This directory contains the dotfiles for my system
 
+## Preview
+
+<img src="https://github.com/1Nekoy2/dotfiles/blob/main/.github/Preview.png">
+
 ## Requirements
 
 Ensure you have the following installed on your system
