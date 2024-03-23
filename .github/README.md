@@ -4,7 +4,7 @@ This directory contains the dotfiles for my system
 
 ## Preview
 
-<img src="https://github.com/1Nekoy2/dotfiles/blob/main/.github/Preview.png">
+<img src="https://github.com/1Nekoy2/dotfiles/blob/main/.github/preview.png">
 
 ## Requirements
 
