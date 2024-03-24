@@ -18,11 +18,11 @@ pacman -S git stow nvim tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit
 
 Instal the dotfiles 
 ```
-git clone --recurse-submodules https://github.com/1Nekoy2/dotfiles.git ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
+git clone --recurse-submodules https://github.com/1Nekoy2/.nekoysdotfiles.git ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
 ```
 or
 ```
-git clone --recurse-submodules  ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
+git clone --recurse-submodules git@github.com:1Nekoy2/.nekoysdotfiles.git ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
 ```
 
 then use GNU stow to create symlinks
