@@ -17,16 +17,17 @@ if status is-interactive
     set fish_greeting
        fortune | cowsay -f kitty | lolcat
        echo 
-           # automaticaly start tmux
-           if status is-interactive
-           and not set -q TMUX
-               exec tmux new-session -A -s main
-           end
+       #           # automaticaly start tmux
+       #           if status is-interactive
+       #           and not set -q TMUX
+       #               exec tmux new-session -A -s main
+       #           end
 
     #theme
 #    fish_config theme save "Catppuccin Mocha"
 
     # aliases
+    alias tm="tmux new-session -A -s main"
     alias icat="kitten icat"
     alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
     alias la="lsd -hA --group-dirs first"
@@ -38,6 +39,7 @@ if status is-interactive
     alias btop="bpytop"
     alias nf="neofetch | lolcat"
     alias catsay="fortune | cowsay -f kitty | lolcat"
+    alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
     
     #fuzzy finder themeing 
     set -Ux FZF_DEFAULT_OPTS "\
