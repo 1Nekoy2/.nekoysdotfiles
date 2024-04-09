@@ -1,95 +1,122 @@
 /*
-          _                         _    
-__      _| | ___   __ _  ___  _   _| |_  
-\ \ /\ / / |/ _ \ / _` |/ _ \| | | | __| 
- \ V  V /| | (_) | (_| | (_) | |_| | |_  
-  \_/\_/ |_|\___/ \__, |\___/ \__,_|\__| 
-                  |___/                  
- 
-by Stephan Raabe (2023) 
------------------------------------------------------ 
+# #######################################################################################
+#
+#
+#  ██╗    ██╗██╗      ██████╗  ██████╗  ██████╗ ██╗   ██╗████████╗
+#  ██║    ██║██║     ██╔═══██╗██╔════╝ ██╔═══██╗██║   ██║╚══██╔══╝
+#  ██║ █╗ ██║██║     ██║   ██║██║  ███╗██║   ██║██║   ██║   ██║   
+#  ██║███╗██║██║     ██║   ██║██║   ██║██║   ██║██║   ██║   ██║   
+#  ╚███╔███╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝╚██████╔╝   ██║   
+#   ╚══╝╚══╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   
+#                                                                 
+# by Nekoy
+# #######################################################################################
 */
 
-/* -----------------------------------------------------
- * Import Pywal colors 
- * ----------------------------------------------------- */
-
-/* -----------------------------------------------------
- * General 
- * ----------------------------------------------------- */
-
 * {
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 	background-image: none;
-	transition: 20ms;
-	box-shadow: none;
+    color: #cdd6f4;
 }
 
 window {
-	background-size: cover;
+	background-color: rgba(30, 30, 27, 0.6);
 }
 
 button {
-	color: #FFFFFF;
-    font-size:20px;
-
-    background-repeat: no-repeat;
+  color: #7d9bba;
+	background-color: rgba(17, 17, 27, 0.0);
+	outline-style: none;
+	border: none;
+	border-width: 0px;
+	background-repeat: no-repeat;
 	background-position: center;
+	background-size: 10%;
+	border-radius: 20px;
+	box-shadow: none;
+	text-shadow: none;
+  animation: gradient_f 20s ease-in infinite;
+}
+
+button:hover#lock {
+	background-color: rgba(30, 30, 27, 0.9);
+	background-size: 25%; 
+	margin-right : 30px; 
+	margin-bottom : 30px;
+	border-radius: 20px; 
+    animation: gradient_f 20s ease-in infinite; 
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682); 
+}
+
+button:hover#logout {
+	background-color: rgba(30, 30, 27, 0.9);;
+	background-size: 25%; 
+	margin-right : 30px;
+	margin-top : 30px;
+	border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite; 
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#shutdown {
+	background-color: rgba(30, 30, 27, 0.9);
 	background-size: 25%;
-
-	border-style: solid;
-	background-color: rgba(12, 12, 12, 0.3);
-	border: 3px solid #FFFFFF;
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-left : 20px;
+	margin-bottom : 30px;
+	border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
-button:focus,
-button:active,
-button:hover {
-    color: @color11;
-	background-color: rgba(12, 12, 12, 0.5);
-	border: 3px solid @color11;
+button:hover#reboot {
+	background-color: rgba(30, 30, 27, 0.9);
+	background-size: 25%;
+	margin-left : 30px;
+	margin-top : 30px;
+	border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
-/* 
------------------------------------------------------ 
-Buttons
------------------------------------------------------ 
-*/
+button:hover#suspend {
+	background-color: rgba(30, 30, 27, 0.9);
+	background-size: 25%;
+	margin-left : 30px;
+	margin-top : 30px;
+	border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite; 
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#hibernate {
+	background-color: rgba(30, 30, 27, 0.9);
+	background-size: 25%;
+	margin-left : 30px;
+	margin-top : 30px;
+	border-radius: 20px;
+    animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
 
 #lock {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/lock.png"));
+  background-image: image(url("./icons/lock.png"), url("./icons/lock.png"));
 }
 
 #logout {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/logout.png"));
-}
-
-#suspend {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/suspend.png"));
-}
-
-#hibernate {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/hibernate.png"));
+  background-image: image(url("./icons/logout.png"), url("./icons/logout.png"));
 }
 
 #shutdown {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/shutdown.png"));
+  background-image: image(url("./icons/shutdown.png"), url("./icons/shutdown.png"));
 }
 
 #reboot {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/reboot.png"));
+  background-image: image(url("./icons/reboot.png"), url("./icons/reboot.png"));
+}
+
+#suspend {
+  background-image: image(url("./icons/suspend.png"), url("./icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("./icons/hibernate.png"), url("./icons/hibernate.png"));
 }

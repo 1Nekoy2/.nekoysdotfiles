@@ -106,6 +106,12 @@
         "tooltip": "true",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "states": [0,50],
+        "format-icons": ["", ""]
+    },
 
     "battery": {
         "bat": "BAT1",
