@@ -1,11 +1,19 @@
 #!/bin/sh
 
-# I DID NOT WRITE THIS SCRIPT, THE OP OF THIS SCRIPT IS https://github.com/JaKooLit
-# I did update a couple thing lines, but that's about it
+# #######################################################################################
+#
+#
+#  ██╗    ██╗ █████╗ ██╗     ██╗     ██████╗  █████╗ ██████╗ ███████╗██████╗ 
+#  ██║    ██║██╔══██╗██║     ██║     ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+#  ██║ █╗ ██║███████║██║     ██║     ██████╔╝███████║██████╔╝█████╗  ██████╔╝
+#  ██║███╗██║██╔══██║██║     ██║     ██╔═══╝ ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗
+#  ╚███╔███╔╝██║  ██║███████╗███████╗██║     ██║  ██║██║     ███████╗██║  ██║
+#   ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+#                                                                            
+# by https://github.com/JaKooLit 
+# #######################################################################################
 
-# This script for selecting wallpapers (SUPER W)
-
-#SCRIPTSDIR="$HOME/.config/hypr/scripts"
+# I did change a couple thing lines, but that's about it
 
 # WALLPAPERS PATH
 wallDIR="$HOME/Pictures/Wallpapers"

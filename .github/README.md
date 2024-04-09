@@ -11,7 +11,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
-pacman -S git stow nvim tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit 
+yay -S git stow nvim tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit hyprland hyprlock hypridle wlogout swww mako bpytop figlet firefox ranger rofi brightnessctl
 ```
 
 ## Installation
