@@ -26,4 +26,9 @@ PICS=($(ls "${wallDIR}" | grep -E ".jpg|.jpeg|.png|.gif" | sort -R ))
 
 notify-send "Hello $username!"
 sleep 1 
-swww img "${wallDIR}/${PICS}" $SWWW_PARAMS
+
+if [ -z "$(ls "${wallDIR}" | grep -E ".jpg|.jpeg|.png|.gif" )" ]; then
+    notify-send "No Wallpapers found" 
+else
+    swww img "${wallDIR}/${PICS}" $SWWW_PARAMS
+fi

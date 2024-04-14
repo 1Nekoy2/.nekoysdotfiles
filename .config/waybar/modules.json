@@ -7,7 +7,7 @@
 
     "custom/launcher": {
         "format": "󰣇",
-        "on-click": "~/.config/rofi/launchers/type-1/launcher.sh",
+        "on-click": "~/.config/rofi/app/app-launcher.sh",
         "tooltip": false
     },
 
@@ -45,7 +45,7 @@
             "urgent": ""
         },
         "persistent-workspaces": {
-            "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
         }
     },
 
@@ -56,7 +56,7 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",       
-        "exec": "eos-update",
+        "exec": "~/.config/dotfiles-scripts/check-updates.sh",
         "restart-interval": 60,
         "on-click": "kitty --class script-floating -e eos-update",
         "on-click-right": "kitty --class script-floating -e pacseek",
@@ -66,7 +66,7 @@
     // group/system
 
     "network": {
-        "on-click": "kitty --class script-floating -e nmtui",
+        "on-click": "kitty --class network-floating -e nmtui",
         "format-disconnected": "󰖪 0%",
         "format-ethernet": "<span font='13' rise='-1000'>󰈀</span> 100%",
         "format-linked": "{ifname} (No IP)",

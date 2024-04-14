@@ -20,7 +20,6 @@
       "hyprland/workspaces"
     ],
     "modules-right": [
-      "custom/updates",  
       "group/system",
       "clock"
     ]
