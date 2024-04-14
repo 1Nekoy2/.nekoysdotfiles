@@ -7,4 +7,4 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/theme//catppuccin.rasi"
+@import "~/.config/rofi/theme/catppuccin.rasi"
