@@ -12,41 +12,106 @@
 # By Nekoy
 # #######################################################################################
 
+
+## Exports 
+set fish_greeting                                 # Supresses fish's intro message
+set TERM "xterm-256color"                         # Sets the terminal type
+set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
+
+## fuzzy finder themeing 
+set -Ux FZF_DEFAULT_OPTS "\
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+## Manpager
+set -x MANPAGER "nvim +Man!"
+
+## On start up
 if status is-interactive
-    # Supresses fish's intro message and start something cool :3
-    set fish_greeting
-       fortune | cowsay -f kitty | lolcat
-       echo 
-       #           # automaticaly start tmux
-       #           if status is-interactive
-       #           and not set -q TMUX
-       #               exec tmux new-session -A -s main
-       #           end
 
-    #theme
-#    fish_config theme save "Catppuccin Mocha"
+   run-on-start-up
 
-    # aliases
-    alias tm="tmux new-session -A -s main"
-    alias icat="kitten icat"
-    alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
-    alias la="lsd -hA --group-dirs first"
-    alias l="lsd"
-    alias ll="lsd -hlA --group-dirs first"
-    alias nv="nvim"
-    alias cr="clear"
-    alias lg="lazygit"
-    alias btop="bpytop"
-    alias nf="neofetch | lolcat"
-    alias catsay="fortune | cowsay -f kitty | lolcat"
-    alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
-    
-    #fuzzy finder themeing 
-    set -Ux FZF_DEFAULT_OPTS "\
-    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
-    #zoxide integration
-    zoxide init --cmd cd fish | source
 end
+
+# keybindings
+function fish_user_key_bindings
+
+    fish_default_key_bindings
+    #fish_vi_key_bindings
+
+end
+
+# start up function
+
+## aliases
+
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# nvim
+alias nv="nvim"
+alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+
+# tmux
+alias t="tmux"
+alias tm="tmux new-session -A -s main"
+
+# ls to lsd
+alias l="lsd"
+alias la="lsd -hA --group-dirs first"
+alias ll="lsd -hlA --group-dirs first"
+alias l.='lsd -A | egrep "^\."'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# git
+alias addup='git add -u'
+alias addall='git add .'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull origin'
+alias push='git push origin'
+alias tag='git tag'
+alias newtag='git tag -a'
+
+# Play audio files in current dir by type
+alias playwav='vlc *.wav'
+alias playogg='vlc *.ogg'
+alias playmp3='vlc *.mp3'
+
+# Play video files in current dir by type
+alias playavi='vlc *.avi'
+alias playmov='vlc *.mov'
+alias playmp4='vlc *.mp4'
+
+# switch between shells
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias tofish="sudo chsh $USER -s /usr//bin/fish && echo 'Now log out.'"
+
+# shortend commands
+alias icat="kitten icat"
+alias cr="clear"
+alias lg="lazygit"
+alias btop="bpytop"
+alias nf="neofetch | lolcat"
+
+# fun
+alias catsay="fortune | cowsay -f kitty | lolcat"
+alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
+alias cflair="~/.config/dotfiles-scripts/flair/flair.sh * | wl-copy"
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+## zoxide integration
+zoxide init --cmd cd fish | source
