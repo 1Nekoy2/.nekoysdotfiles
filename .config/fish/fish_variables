@@ -1,6 +1,17 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CALCHISTFILE:/home/nekoy/\x2ecache/calc_history
+SETUVAR --export CARGO_HOME:/home/nekoy/\x2elocal/share/cargo
+SETUVAR --export --path CUDA_CACHE_PATH:/home/nekoy/\x2ecache/nv
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dbg\x2b\x3a\x23313244\x2cbg\x3a\x231e1e2e\x2cspinner\x3a\x23f5e0dc\x2chl\x3a\x23f38ba8\x20\x2d\x2dcolor\x3dfg\x3a\x23cdd6f4\x2cheader\x3a\x23f38ba8\x2cinfo\x3a\x23cba6f7\x2cpointer\x3a\x23f5e0dc\x20\x2d\x2dcolor\x3dmarker\x3a\x23f5e0dc\x2cfg\x2b\x3a\x23cdd6f4\x2cprompt\x3a\x23cba6f7\x2chl\x2b\x3a\x23f38ba8
+SETUVAR --export GNUPGHOME:/home/nekoy/\x2elocal/share/gnupg
+SETUVAR --export GTK2_RC_FILES:/home/nekoy/\x2econfig/gtk\x2d2\x2e0/gtkrc
+SETUVAR --export RUSTUP_HOME:/home/nekoy/\x2elocal/share/rustup
+SETUVAR --export XDG_CACHE_HOME:/home/nekoy/\x2ecache
+SETUVAR --export XDG_CONFIG_HOME:/home/nekoy/\x2econfig
+SETUVAR --export XDG_DATA_HOME:/home/nekoy/\x2elocal/share
+SETUVAR --export XDG_STATE_HOME:/home/nekoy/\x2elocal/state
+SETUVAR --export ZDOTDIR:/home/nekoy/\x2econfig/zsh
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\x20Frappe\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Latte\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Macchiato\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Mocha\x2etheme
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish

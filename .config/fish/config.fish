@@ -12,17 +12,34 @@
 # By Nekoy
 # #######################################################################################
 
-
 ## Exports 
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
+
+## Path Variables
+set -Ux XDG_DATA_HOME "$HOME/.local/share"
+set -Ux XDG_CONFIG_HOME "$HOME/.config"
+set -Ux XDG_STATE_HOME "$HOME/.local/state"
+set -Ux XDG_CACHE_HOME "$HOME/.cache"
+
+## Universal exports
+set -Ux CALCHISTFILE "$XDG_CACHE_HOME/calc_history"
+set -Ux CARGO_HOME "$XDG_DATA_HOME/cargo"
+set -Ux CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
+set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
+set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+set -Ux RUSTUP_HOME "$XDG_DATA_HOME/rustup"
+set -Ux ZDOTDIR "$XDG_CONFIG_HOME/zsh"
 
 ## fuzzy finder themeing 
 set -Ux FZF_DEFAULT_OPTS "\
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+# source 
+source "/home/nekoy/.local/share/cargo/env.fish"
 
 ## Manpager
 set -x MANPAGER "nvim +Man!"
@@ -112,6 +129,9 @@ alias catsay="fortune | cowsay -f kitty | lolcat"
 alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
 alias cflair="~/.config/dotfiles-scripts/flair/flair.sh * | wl-copy"
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+#n/a
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 ## zoxide integration
 zoxide init --cmd cd fish | source
