@@ -130,8 +130,11 @@ alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
 alias cflair="~/.config/dotfiles-scripts/flair/flair.sh * | wl-copy"
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
-#n/a
+# n/a
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 ## zoxide integration
 zoxide init --cmd cd fish | source
+
+## initialize Starship 
+starship init fish | source
