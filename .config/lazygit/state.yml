@@ -1,9 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/nekoy/.nekoysdotfiles
+- /home/nekoy/.config/nvim
+- /home/nekoy/.nekoysdotfiles/.config/nvim
+- /media/data/mythings/.dotfiles
 - /home/nekoy/scripts/flair
 - /home/nekoy/scripts/divisable
-- /home/nekoy/.config/nvim
 - /home/nekoy/github/grub
 startuppopupversion: 5
 lastversion: 0.41.0

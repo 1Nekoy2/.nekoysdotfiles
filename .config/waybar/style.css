@@ -4,21 +4,21 @@
 @import url("./Theme/mocha.css");
 
 * {
-  border: none;
-  font-family: "JetBrainsMono Nerd Font";
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
 }
 
 /* Overarching styles */
 
 window#waybar {
-  background: transparent;
-  color: @text;
+    background: transparent;
+    color: @text;
 }
 
 tooltip {
-  background-color: @base;
-  color: @text;
-  border-radius: 5px;
+    background-color: @base;
+    color: @text;
+    border-radius: 5px;
 }
 
 /* Left modules */
@@ -28,58 +28,58 @@ tooltip {
 #custom-wallpaper,
 #tray,
 #window {
-  background: @base;
-  border-radius: 8px;
-  padding: 0px 10px;
-  margin: 3px 0px;
+    background: @base;
+    border-radius: 8px;
+    padding: 0px 10px;
+    margin: 3px 0px;
 }
 
 /* Overwritting the previous padding style on 'custom-logo' 
 * to give proper padding to nerd font icon */
 #custom-logo {
-  padding: 0px 15px 0px 10px;
+    padding: 0px 15px 0px 10px;
 }
 
 /* If no windows are present on the screen,
 * this module will be transparent */
 window#waybar.empty #window {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 /* Center modules */
 
 #workspaces {
-  background: @base;
-  border-radius: 8px;
-  padding: 0px 5px;
-  margin: 4px 10px;
+    background: @base;
+    border-radius: 8px;
+    padding: 0px 5px;
+    margin: 4px 10px;
 }
 
 #workspaces button {
-  padding: 0px 9px;
-  margin: 6px 2px;
-  border-radius: 20px;
-  background: @subtext0;
-  transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
+    padding: 0px 9px;
+    margin: 6px 2px;
+    border-radius: 20px;
+    background: @subtext0;
+    transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
 }
 
 #workspaces button.active {
-  margin: 6px 2px;
-  padding: 0px 35px;
-  background-color: @text;
+    margin: 6px 2px;
+    padding: 0px 35px;
+    background-color: @text;
 }
 
 #workspaces button:hover {
-  background-color: @lavender;
+    background-color: @lavender;
 }
 
 /* Right modules */
 
 #custom-updates {
-  background: @base;
-  border-radius: 8px;
-  padding: 0px 10px;
-  margin: 3px 0px;
+    background: @base;
+    border-radius: 8px;
+    padding: 0px 10px;
+    margin: 3px 0px;
 }
 
 /* These modules are children of group/system */
@@ -89,19 +89,19 @@ window#waybar.empty #window {
 #disk,
 #memory,
 #pulseaudio {
-  margin: 0px 10px;
+    margin: 0px 10px;
 }
 
 /* group/system */
 #system {
-  background: @base;
-  border-radius: 8px;
-  margin: 3px 0px;
+    background: @base;
+    border-radius: 8px;
+    margin: 3px 0px;
 }
 
 #clock {
-  background: @base;
-  border-radius: 8px;
-  padding: 0px 10px;
-  margin: 3px 0px;
+    background: @base;
+    border-radius: 8px;
+    padding: 0px 10px;
+    margin: 3px 0px;
 }

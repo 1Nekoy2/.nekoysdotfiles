@@ -21,6 +21,7 @@ Help()
     echo "options:"
     echo "b     preset for bash"
     echo "c     preset for css"
+    echo "l     preset for lua"
     echo
 
 }
@@ -43,7 +44,7 @@ choice="deafault"
 author="Nekoy"
 
 # Get the options
-while getopts ":hbcas:" option; do
+while getopts ":hbcls:" option; do
     case $option in
         h) 
             Help
@@ -55,9 +56,8 @@ while getopts ":hbcas:" option; do
         c)
             choice="css" 
         ;;
-        a)
-            author="$OPTARG"
-            echo "$OPTARG"
+        l)
+            choice="lua"
         ;;
     esac
     
@@ -79,6 +79,11 @@ if [[ "${@: -1}" != -* ]]; then
             echo "/*"
             main ${@: -1} $author | sed -n 's/^.*/#&/p'
             echo "*/"
+        ;;
+        lua)
+            echo 
+            main ${@: -1} $author | sed -n 's/^.*/--&/p'
+            echo
         ;;
     esac
 else

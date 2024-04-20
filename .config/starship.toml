@@ -25,13 +25,22 @@ show_always = true
 [character]
 success_symbol = "[❯](text)"
 error_symbol = "[[](red) ❯](text)"
-vimcmd_symbol = "[](green)"
+vimcmd_symbol = "[[](green) ❯](text)"
+vimcmd_visual_symbol = "[[](lavender) ❯](text)"
+vimcmd_replace_symbol = "[[](red) ❯](text)"
+vimcmd_replace_one_symbol = "[[](red) ❯](text)"
 
 [directory]
-read_only = ""
+read_only = " "
 truncation_length = 10
 truncate_to_repo = true # truncates directory to root folder if in github repo
 style = "bold subtext0"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
@@ -45,7 +54,7 @@ untracked = "[${count}?](blue)"
 staged = "[${count}+](green)" 
 
 [git_state]
-style =	"bold red"
+style =	"bold lavender"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"	
@@ -89,17 +98,8 @@ symbol = " "
 [haskell]
 symbol = "λ "
 
-[memory_usage]
-symbol = " "
-
-[nim]
-symbol = " "
-
 [nix_shell]
 symbol = " "
-
-[package]
-symbol = " "
 
 [perl]
 symbol = " "

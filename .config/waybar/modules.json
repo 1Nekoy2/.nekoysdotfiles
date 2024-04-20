@@ -81,6 +81,7 @@
     },
 
     "cpu": {
+        "on-click": "auto-cpufreq-gtk",
         "format": "<span font='13' rise='-1000'>󰻠</span> {usage}%",
         "format-alt": "󰻠 {avg_frequency} GHz",
         "interval": 1
