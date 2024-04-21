@@ -16,6 +16,7 @@
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
+set -Ux QT_STYLE_OVERRIDE "kvantum"
 
 ## Path Variables
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
