@@ -16,7 +16,6 @@
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
-set -Ux QT_STYLE_OVERRIDE "kvantum"
 
 ## Path Variables
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
@@ -32,6 +31,7 @@ set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 set -Ux ZDOTDIR "$XDG_CONFIG_HOME/zsh"
+set -Ux QT_STYLE_OVERRIDE "kvantum"
 
 ## fuzzy finder themeing 
 set -Ux FZF_DEFAULT_OPTS "\
