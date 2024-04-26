@@ -1,8 +1,6 @@
 function run-on-start-up
 
-    set chooser (random 1 7) 
-
-    switch $chooser
+    switch (random 1 7)
         case 1
             fortune | cowsay -f kitty | lolcat
         case 2

@@ -52,6 +52,12 @@ if status is-interactive
 
 end
 
+if set -q KITTY_INSTALLATION_DIR
+    set --global KITTY_SHELL_INTEGRATION enabled
+    source "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish"
+    set --prepend fish_complete_path "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d"
+end
+
 # keybindings
 function fish_user_key_bindings
 
@@ -83,7 +89,7 @@ alias tm="tmux new-session -A -s main"
 alias l="lsd"
 alias la="lsd -hA --group-dirs first"
 alias ll="lsd -hlA --group-dirs first"
-alias l.='lsd -A | egrep "^\."'
+alias l.='lsd -A | grep -E "^."'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
