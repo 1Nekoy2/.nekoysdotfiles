@@ -1,0 +1,217 @@
+# interpreter for shell commands
+set shell bash
+
+# Basic options 
+set hidden true
+set icons true
+set ignorecase true
+
+# Display pdf and pictures
+set previewer ~/.config/lf/preview.sh
+set cleaner ~/.config/lf/clean.sh
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        application/x-executable) "$f";;
+        *) setsid xdg-open "$f" &;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+  clear
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  touch $ans
+  clear
+}}
+
+cmd sudomkfile ${{
+  printf "File Name: "
+  read ans
+  sudo $EDITOR $ans
+  clear
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+  clear
+}}
+
+cmd fzf_jump ${{
+  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+# paste
+cmd paste $cp-p --lf-paste $id
+
+# zoxide integration
+cmd z %{{
+	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd on-cd &{{
+        zoxide add "$PWD"
+        export STARSHIP_SHELL=
+        fmt="$(starship prompt)"
+        lf -remote "send $id set promptfmt \"$fmt\""
+        # display repository status in your prompt
+    	if [ -d .git ] || [ -f .git ]; then
+    		branch=$(git branch --show-current 2>/dev/null) || true
+    		remote=$(git config --get branch.$branch.remote 2>/dev/null) || true
+    		url=$(git remote get-url $remote 2>/dev/null) || true
+    		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m [GIT BRANCH:> $branch >> $url]\033[0m"
+    	elif [ -d .hg ]; then
+    		hg=$(hg branch 2>/dev/null) || true
+    		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m [HG BRANCH:> $hg]\033[0m"
+    	elif [ -d .svn ]; then
+    		svn=$(svn info 2>/dev/null | awk '/^URL: /{print $2}') || true
+    		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m [SVN URL:> $svn]\033[0m"
+    	else
+    		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m%f\033[0m"
+    	fi
+    	lf -remote "send $id set promptfmt \"$fmt\""
+        }}
+
+# Trash cli bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    # extract the substring from start of string up to delimiter.
+    # this is the first "element" of the string.
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    # if there's only one element left, set `files` to an empty string.
+    # this causes us to exit this `while` loop.
+    # else, we delete the first "element" of the string from files, and move onto the next.
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# Git ntegration
+cmd git_branch ${{
+    git branch | fzf | xargs git checkout
+    pwd_shell=$(pwd | sed 's/\\/\\\\/g;s/"/\\"/g')
+    lf -remote "send $id updir"
+    lf -remote "send $id cd \"$pwd_shell\""
+}}
+
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
+
+# Bindings
+map ee $$EDITOR "$f"
+map u $view "$f"
+
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+map t
+
+# Archive Mappings
+map az zip
+map at tar
+map ag targz
+map ab targz
+map au unarchive
+
+# Basic Functions
+map . set hidden!
+map dd delete
+map f fzf_jump
+map p paste
+map x cut
+map y copy
+map <enter> open
+map <esc> quit
+map mf mkfile
+map mr sudomkfile
+map md mkdir
+map ch chmod
+map br $vimv $fx
+map r rename
+map ) bottom
+map R reload
+map C clear
+map U unselect
+
+# Trash Mappings
+map dd trash
+map tc clear_trash
+map tr restore_trash
+map ttt ${{kitty}}
+
+# git
+map gib :git_branch
+map gip ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
+map gis ${{clear; git status; echo "press ENTER"; read ENTER}}
+map gil ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
+
+# Movement
+map gh cd ~/
+map gv cd ~/Videos
+map gp cd ~/Pictures
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map ge cd ~/Desktop
+map gs cd ~/scripts
+map gc cd ~/.config
+map gm cd /media/data
+map gr cd /run/media
