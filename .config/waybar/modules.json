@@ -37,16 +37,15 @@
         "active-only": false,
         "all-outputs": false,
         "disable-scroll": false,
-        "format": "",
+        "show-special": true,
+        "format": "{name}",
         "format-icons": {
-            "active": "",
-            "default": "",
+            "active": "{}",
+            "default": "{}",
+            "special": "S",
             "sort-by-number": true,
             "urgent": ""
         },
-        "persistent-workspaces": {
-            "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-        }
     },
 
     // Right modules
