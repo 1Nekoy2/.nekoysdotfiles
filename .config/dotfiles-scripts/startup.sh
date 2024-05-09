@@ -24,11 +24,11 @@ DURATION=1
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 PICS=($(ls "${wallDIR}" | grep -E ".jpg|.jpeg|.png|.gif" | sort -R ))
 
-notify-send "Hello $username!"
+notify-send "Hello $username!" "Have fun computing"
 sleep 1 
 
 if [ -z "$(ls "${wallDIR}" | grep -E ".jpg|.jpeg|.png|.gif" )" ]; then
-    notify-send "No Wallpapers found" 
+    notify-send "No Wallpapers found" "add some to $wallDIR" 
 else
     swww img "${wallDIR}/${PICS}" $SWWW_PARAMS
 fi

@@ -31,7 +31,6 @@ set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -Ux RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 set -Ux ZDOTDIR "$XDG_CONFIG_HOME/zsh"
-set -Ux QT_STYLE_OVERRIDE "kvantum"
 
 ## fuzzy finder themeing 
 set -Ux FZF_DEFAULT_OPTS "\
@@ -81,6 +80,10 @@ alias .5='cd ../../../../..'
 alias nv="nvim"
 alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
+# package menagers 
+alias paru="systemd-inhibit --what=idle paru"
+alias eos-update="systemd-inhibit --what=idle eos-update"
+
 # tmux
 alias t="tmux"
 alias tm="tmux new-session -A -s main"
@@ -129,7 +132,7 @@ alias icat="kitten icat"
 alias cr="clear"
 alias lg="lazygit"
 alias btop="bpytop"
-alias nf="neofetch | lolcat"
+alias nf="fastfetch"
 
 # fun
 alias catsay="fortune | cowsay -f kitty | lolcat"

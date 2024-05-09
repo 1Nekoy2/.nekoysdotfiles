@@ -76,7 +76,7 @@ window#waybar.empty #window {
 
 /* Right modules */
 
-#custom-updates {
+#custom-notification{
     background: @base;
     border-radius: 8px;
     padding: 0px 10px;

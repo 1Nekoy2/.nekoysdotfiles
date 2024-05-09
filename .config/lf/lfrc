@@ -1,3 +1,16 @@
+# #######################################################################################
+#
+#
+#  ██╗     ███████╗
+#  ██║     ██╔════╝
+#  ██║     █████╗  
+#  ██║     ██╔══╝  
+#  ███████╗██║     
+#  ╚══════╝╚═╝     
+#                  
+# by Nekoy
+# #######################################################################################
+
 # interpreter for shell commands
 set shell bash
 
@@ -5,6 +18,7 @@ set shell bash
 set hidden true
 set icons true
 set ignorecase true
+set drawbox true
 
 # Display pdf and pictures
 set previewer ~/.config/lf/preview.sh
@@ -52,6 +66,8 @@ cmd chmod ${{
   lf -remote 'send reload'
   clear
 }}
+
+cmd openterminal $(setsid kitty $PWD &)
 
 cmd fzf_jump ${{
   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
@@ -149,6 +165,11 @@ cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
+
+cmd dragon %dragon-drop -a -x $fx
+cmd dragon-stay %dragon-drop -a $fx
+cmd dragon-individual %dragon-drop $fx
+
 # Bindings
 map ee $$EDITOR "$f"
 map u $view "$f"
@@ -164,6 +185,9 @@ map c
 map e
 map f
 map t
+map u
+
+map ot openterminal
 
 # Archive Mappings
 map az zip
@@ -191,6 +215,11 @@ map ) bottom
 map R reload
 map C clear
 map U unselect
+
+# Dragon Mapping
+map dr dragon
+map ds dragon-stay
+map di dragon-individual
 
 # Trash Mappings
 map dd trash

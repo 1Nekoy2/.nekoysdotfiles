@@ -1,19 +1,21 @@
 function run-on-start-up
 
-    switch (random 1 7)
+    switch (random 1 8)
         case 1
             fortune | cowsay -f kitty | lolcat
         case 2
-            neofetch | lolcat
+            fortune | uwuify | cowsay -f kitty | lolcat
         case 3
-            seq 64 | sort --random-sort | spark | lolcat
+            fastfetch
         case 4
-            ~/.config/dotfiles-scripts/colorbars
+            seq 64 | sort --random-sort | spark | lolcat
         case 5
-            ~/.config/dotfiles-scripts/colortest
+            ~/.config/dotfiles-scripts/colorbars
         case 6
-            ~/.config/dotfiles-scripts/colortest-slim
+            ~/.config/dotfiles-scripts/colortest
         case 7
+            ~/.config/dotfiles-scripts/colortest-slim
+        case 8
             ~/.config/dotfiles-scripts/colorwheel
         case '*'
             echo "error" 

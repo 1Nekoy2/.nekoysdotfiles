@@ -1,27 +1,20 @@
 [
   {
     "height": 38,
-	"spacing": 10,
+    "spacing": 10,
     "layer": "top",
     "position": "top",
     "margin-top": 3,
     "margin-left": 5,
     "margin-right": 5,
-    "include": [
-      "~/.config/waybar/modules.json"
-    ],
+    "include": ["~/.config/waybar/modules.json"],
     "modules-left": [
-        "custom/launcher",
-        "custom/wallpaper",
-        "tray",
-        "hyprland/window"
+      "custom/launcher",
+      "custom/wallpaper",
+      "tray",
+      "hyprland/window",
     ],
-    "modules-center": [
-      "hyprland/workspaces"
-    ],
-    "modules-right": [
-      "group/system",
-      "clock"
-    ]
-  }
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["group/system", "custom/notification", "clock"],
+  },
 ]

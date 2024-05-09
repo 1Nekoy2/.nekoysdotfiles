@@ -1,140 +1,133 @@
-// The declared modules are supposed to represent how they are layed out 
-// starting from left to right as closely as possible
+// #######################################################################################
+//
+//
+//  ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+//  ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+//  ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+//  ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+//  ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+//  ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+//
+// by Nekoy
+// #######################################################################################
 
 {
+  // Left modules
 
-    // Left modules
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "~/.config/rofi/app/app-launcher.sh",
+    "tooltip": false
+  },
 
-    "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "~/.config/rofi/app/app-launcher.sh",
-        "tooltip": false
+  "custom/wallpaper": {
+    "format": "<span font='13' rise='-1000'> </span> Wallpapers",
+    "on-click": "~/.config/rofi/wallpaper/wallpaper-select.sh",
+    "interval": 86400, // once every day
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 7
+  },
+
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) - Firefox": "$1",
+      "(.*) - kitty": "[$1]"
     },
+    "separate-outputs": true
+  },
 
-    "custom/wallpaper":{
-        "format":"<span font='13' rise='-1000'> </span> Wallpapers",
-        "on-click": "~/.config/rofi/wallpaper/wallpaper-select.sh",
-        "interval" : 86400, // once every day
-        "tooltip": false
+  // Center modules
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "show-special": true,
+    "format": "{name}"
+  },
+
+  // Right modules
+
+  "custom/notification": {
+    "return-type": "json",
+    "exec": "~/.config/dotfiles-scripts/notification.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1
+  },
+
+  // group/system
+
+  "network": {
+    "on-click": "kitty --class network-floating -e nmtui",
+    "format-disconnected": "󰖪 0%",
+    "format-ethernet": "<span font='13' rise='-1000'>󰈀</span> 100%",
+    "format-linked": "{ifname} (No IP)",
+    "format-wifi": "<span font='13' rise='-1000'> </span> {signalStrength}%",
+    "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
+  },
+
+  "memory": {
+    "format": "<span font='13' rise='-1000'>󰍛</span> {used} GiB",
+    "format-alt": "<span font='13' rise='-1000'>󰍛</span> {percentage}%",
+    "interval": 5
+  },
+
+  "cpu": {
+    "on-click": "auto-cpufreq-gtk",
+    "format": "<span font='13' rise='-1000'>󰻠</span> {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 1
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "default": [
+        "<span font='13' rise='-1000'>󰕿</span>",
+        "<span font='13' rise='-1000'>󰖀</span>",
+        "<span font='13' rise='-1000'>󰕾</span>"
+      ]
     },
+    "format-muted": "󰝟",
+    "on-click": "pavucontrol",
+    "scroll-step": 5
+  },
 
-    "tray": {
-        "icon-size": 20,
-        "spacing": 7
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "format-alt": " {:%H:%M %b %d %a}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "states": [0, 50],
+    "format-icons": ["", ""]
+  },
+
+  "battery": {
+    "bat": "BAT1",
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 5
     },
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%"
+  },
 
-    "hyprland/window": {
-        "rewrite": {
-            "(.*) - Firefox": "$1",
-            "(.*) - kitty": "[$1]"
-        },
-        "separate-outputs": true
-    },
+  // Groups
 
-    // Center modules
-
-    "hyprland/workspaces": {
-        "active-only": false,
-        "all-outputs": false,
-        "disable-scroll": false,
-        "show-special": true,
-        "format": "{name}",
-        "format-icons": {
-            "active": "{}",
-            "default": "{}",
-            "special": "S",
-            "sort-by-number": true,
-            "urgent": ""
-        },
-    },
-
-    // Right modules
-
-    "custom/updates": {
-        "format": "<span font='12' rise='-1000'></span>  {}",
-        "tooltip-format": "{}",
-        "escape": true,
-        "return-type": "json",       
-        "exec": "~/.config/dotfiles-scripts/check-updates.sh",
-        "restart-interval": 60,
-        "on-click": "kitty --class script-floating -e eos-update",
-        "on-click-right": "kitty --class script-floating -e pacseek",
-        "tooltip": false
-    },
-
-    // group/system
-
-    "network": {
-        "on-click": "kitty --class network-floating -e nmtui",
-        "format-disconnected": "󰖪 0%",
-        "format-ethernet": "<span font='13' rise='-1000'>󰈀</span> 100%",
-        "format-linked": "{ifname} (No IP)",
-        "format-wifi": "<span font='13' rise='-1000'> </span> {signalStrength}%",
-        "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
-    },
-
-    "memory": {
-        "format": "<span font='13' rise='-1000'>󰍛</span> {used} GiB",
-        "format-alt": "<span font='13' rise='-1000'>󰍛</span> {percentage}%",
-        "interval": 5
-    },
-
-    "cpu": {
-        "on-click": "auto-cpufreq-gtk",
-        "format": "<span font='13' rise='-1000'>󰻠</span> {usage}%",
-        "format-alt": "󰻠 {avg_frequency} GHz",
-        "interval": 1
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-icons": {
-            "default": [
-                "<span font='13' rise='-1000'>󰕿</span>",
-                "<span font='13' rise='-1000'>󰖀</span>",
-                "<span font='13' rise='-1000'>󰕾</span>"
-            ]
-        },
-        "format-muted": "󰝟",
-        "on-click": "pavucontrol",
-        "scroll-step": 5
-    },
-
-    "clock": {
-        "format": "{:%H:%M %b %d %a}",
-        "format-alt": "{:%H:%M}",
-        "tooltip": "true",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "states": [0,50],
-        "format-icons": ["", ""]
-    },
-
-    "battery": {
-        "bat": "BAT1",
-        "states": {
-        "good": 95,
-        "warning": 30,
-        "critical": 5
-        },
-        "format": "󰁹 {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": " {capacity}%",
-    },
-
-    // Groups
-
-    "group/system": {
-        "orientation": "horizontal",
-        "modules": [
-            "network",
-            "memory",
-            "cpu",
-            "pulseaudio",
-            "battery"
-        ]
-    }
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["network", "memory", "cpu", "pulseaudio", "battery"]
+  }
 }

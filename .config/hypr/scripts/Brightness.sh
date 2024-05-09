@@ -2,4 +2,4 @@
 
 Max=$(brightnessctl max)
 brightness=$(brightnessctl get)
-echo "Brightness: $(( 100*$brightness/$Max ))%"
+echo "$(( 100*$brightness/$Max ))"
