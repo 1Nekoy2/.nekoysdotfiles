@@ -11,7 +11,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
-paru -S git stow neovim lf tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit hyprland hyprlock hypridle hyprpicker waybar wlogout wl-clipboard cliphist swww dunst bpytop figlet firefox ranger rofi-wayland brightnessctl starship polkit-gnome nwg-look kvantum kwantum-qt5 lsd bat grim swappy nodejs mpv imv fastfetch brightnessctl
+paru -S git stow neovim lf tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit hyprland hyprlock hypridle hyprpicker waybar wlogout wl-clipboard cliphist swww dunst bpytop figlet firefox ranger rofi-wayland brightnessctl starship polkit-gnome nwg-look kvantum kwantum-qt5 lsd bat grim swappy nodejs mpv imv fastfetch brightnessctl pistol-git fzf dragon-drop trash-cli
 ```
 
 ## Installation
