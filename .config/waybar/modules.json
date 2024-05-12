@@ -77,7 +77,6 @@
   },
 
   "cpu": {
-    "on-click": "auto-cpufreq-gtk",
     "format": "<span font='13' rise='-1000'>󰻠</span> {usage}%",
     "format-alt": "󰻠 {avg_frequency} GHz",
     "interval": 1
@@ -113,15 +112,19 @@
   },
 
   "battery": {
+    "on-click": "auto-cpufreq-gtk",
     "bat": "BAT1",
     "states": {
+      "interval": 10,
       "good": 95,
       "warning": 30,
       "critical": 5
     },
-    "format": "󰁹 {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
-    "format-plugged": " {capacity}%"
+    "tooltip": "true",
+    "tooltip-format": "{timeTo}\nPower draw: {power}W\nBattery health: {health}"
   },
 
   // Groups
