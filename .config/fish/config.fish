@@ -16,6 +16,7 @@
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
+set -U zoxide_cmd "cd"
 
 ## Path Variables
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
@@ -142,9 +143,6 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 
 # n/a
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-
-## zoxide integration
-zoxide init --cmd cd fish | source
 
 ## initialize Starship 
 starship init fish | source
