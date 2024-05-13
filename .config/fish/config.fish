@@ -126,7 +126,9 @@ alias playmp4='vlc *.mp4'
 # Rebos
 alias rebl='rebos gen list'
 alias rebc='rebos gen commit'
-alias rebb='rebos gen current build'
+alias rebb='systemd-inhibit --what=idle rebos gen current build'
+alias rebsync="systemd-inhibit --what=idle rebos managers sync"
+alias rebupgrade="systemd-inhibit --what=idle rebos managers upgrade"
 
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
