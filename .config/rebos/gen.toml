@@ -1,0 +1,69 @@
+# --------------------- #
+#    Generation File    #
+# --------------------- #
+
+# Other generation files to import. (Example: intensive_apps -> ~/.config/rebos/imports/intensive_apps.toml)
+imports = [
+    "core_packages",
+    #"programing_languages",
+    "hyprland", 
+]
+
+[managers.serv_startup]
+items = [
+  "sddm",
+]
+
+# Packages to be installed via the native package manager.
+[managers.system]
+items = [
+    "meson",
+    "ninja",
+    "pipewire",
+    "thunar",
+    "libreoffice-fresh",
+    "nerd-fonts",
+    "cava-git",
+    "gimp",
+    "wine",
+    "stow",
+    "lf",
+    "sddm",
+    "tmux",
+    "kitty",
+    "fish",
+    "zoxide",
+    "lolcat",
+    "cowsay",
+    "fortune-mod",
+    "lazygit",
+    "bpytop",
+    "figlet",
+    "firefox",
+    "brightnessctl",
+    "starship",
+    "bat",
+    "grim",
+    "swappy",
+    "nodejs",
+    "mpv",
+    "imv",
+    "fastfetch",
+    "brightnessctl",
+    #"pistol-git",
+    "fzf",
+    "dragon-drop",
+    "firefox",
+    "fastfetch",
+    "syncthing",
+]
+
+# Packages to be installed via Cargo.
+[managers.cargo]
+items = [
+    "uwuify",   
+    "cargo-info",
+    "cargo-update",
+    "cargo-expand",
+    "cargo-show-asm",
+]

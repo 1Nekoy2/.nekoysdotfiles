@@ -1,0 +1,14 @@
+[managers.system]
+items = [
+    "wl-clipboard",
+    "cliphist",
+    "waybar",
+    "rofi-wayland",
+    "swww",
+    "dunst",
+    "wlogout-git",
+    "nwg-look",
+    "qt5-wayland",
+    "kvantum",
+    "kvantum-qt5",
+]

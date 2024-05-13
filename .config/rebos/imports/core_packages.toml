@@ -1,0 +1,16 @@
+[managers.system]
+items = [
+    "lsd",
+    "udisks2",
+    "parted",
+    "git",
+    "zip",
+    "unzip",
+    "clang",
+    "gcc",
+    "lsd",
+    "vim",
+    "neovim",
+    "stow",
+    "trash-cli",
+]

@@ -123,6 +123,11 @@ alias playavi='vlc *.avi'
 alias playmov='vlc *.mov'
 alias playmp4='vlc *.mp4'
 
+# Rebos
+alias rebl='rebos gen list'
+alias rebc='rebos gen commit'
+alias rebb='rebos gen current build'
+
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"

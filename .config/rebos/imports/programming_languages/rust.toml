@@ -1,0 +1,6 @@
+[managers.system]
+items = [
+  "rustup",
+  "rust-analyzer",
+  "rust-src",
+]
