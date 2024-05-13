@@ -11,7 +11,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
-paru -S git stow neovim lf tmux kitty fish zoxide lolcat cowsay fortune-mod lazygit hyprland hyprlock hypridle hyprpicker waybar wlogout wl-clipboard cliphist swww dunst bpytop figlet firefox ranger rofi-wayland brightnessctl starship polkit-gnome nwg-look kvantum kwantum-qt5 lsd bat grim swappy nodejs mpv imv fastfetch brightnessctl pistol-git fzf dragon-drop trash-cli
+sudo pacman -S paru rustup fish
 ```
 
 ## Installation
@@ -31,11 +31,44 @@ then use GNU stow to create symlinks
 stow .
 ```
 
-instal tpm
+start fish to make rust install in the right place
 ```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fish
 ```
-and then install the tmux plugins with the use of **prefix + I**
+
+now install default rust envirament with
+```
+rustup default stable
+```
+
+install rebos
+```
+cargo install rebos
+```
+
+run rebos setup
+```
+rebos setup
+```
+
+now commit changes
+```
+rebc "initial"
+```
+or 
+```
+rebos gen commit "initial"
+```
+
+install all other needed packages
+```
+rebb
+```
+or
+```
+rebos gen current build
+```
+
 ## Source
 
 https://www.youtube.com/watch?v=y6XCebnB9gs&t=223s
