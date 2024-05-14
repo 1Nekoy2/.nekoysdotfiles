@@ -11,7 +11,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
-sudo pacman -S paru rustup fish
+sudo pacman -S paru rustup fish stow
 ```
 
 ## Installation
