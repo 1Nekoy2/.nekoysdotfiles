@@ -13,14 +13,19 @@
 # #######################################################################################
 
 command_timeout = 1000
+right_format= """$time"""
 
 # Sets user-defined palette
 palette = "catppuccin_mocha"
 
 [username]
-style_user = "lavender bold"
 show_always = true
-format = '[\[[$user]($style)\]](bold overlay1) '
+format = '[\[[$user](lavender bold)\]](bold overlay1) '
+
+[hostname]
+ssh_only = true
+disabled = false
+format = '[\[\]](bold blue) [\[[$hostname](bold blue)\]](bold overlay1) '
 
 [cmd_duration]
 disabled = true
@@ -50,9 +55,16 @@ behind = "⇣${count}"
 untracked = "[${count}?](blue)" 
 staged = "[${count}+](green)" 
 
+[time]
+disabled = false
+format = '[\[[$time](subtext1)\]](bold overlay1)'
+time_format = "%R"
+utc_time_offset = "local"
+
 [git_branch]
 format = '[\[[$branch(:$remote_branch)](bold lavender)\]](bold overlay1) '
 
+# use fe
 [package]
 format = '[\[[󰏖 $version](bold peach)\]](bold overlay1) '
 
@@ -64,6 +76,9 @@ format = '[\[[ $version](red bold)\]](bold overlay1)'
 
 [c]
 format = '[\[[ $version](bold blue)\]](bold overlay1)'
+
+[python]
+format = '[\[[ $version](bold blue)\]](bold overlay1)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
