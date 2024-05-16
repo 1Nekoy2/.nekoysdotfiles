@@ -67,4 +67,7 @@ items = [
     "cargo-update",
     "cargo-expand",
     "cargo-show-asm",
+    "wiki-tui",
+    "bacon",
+    "mprocs",
 ]
