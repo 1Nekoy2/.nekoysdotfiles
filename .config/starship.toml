@@ -19,33 +19,28 @@ palette = "catppuccin_mocha"
 
 [username]
 style_user = "lavender bold"
-style_root = "teal bold"
-format = "[$user]($style) "
-disabled = false
 show_always = true
+format = '[\[[$user]($style)\]](bold overlay1) '
+
+[cmd_duration]
+disabled = true
 
 [character]
-success_symbol = "[❯](text)"
-error_symbol = "[[](red) ❯](text)"
-vimcmd_symbol = "[[](green) ❯](text)"
-vimcmd_visual_symbol = "[[](lavender) ❯](text)"
-vimcmd_replace_symbol = "[[](red) ❯](text)"
-vimcmd_replace_one_symbol = "[[](red) ❯](text)"
+success_symbol = "[-❯](text)"
+error_symbol = "[[](red) -❯](text)"
+vimcmd_symbol = "[[](green) -❯](text)"
+vimcmd_visual_symbol = "[[](lavender) -❯](text)"
+vimcmd_replace_symbol = "[[](red) -❯](text)"
+vimcmd_replace_one_symbol = "[[](red) -❯](text)"
 
 [directory]
-read_only = " "
+read_only = '[]'
 truncation_length = 10
 truncate_to_repo = true # truncates directory to root folder if in github repo
-style = "bold subtext0"
-
-[jobs]
-symbol = ""
-style = "bold red"
-number_threshold = 1
-format = "[$symbol]($style)"
+format = '[\[[$path](bold subtext1)\]](bold overlay1) [$read_only]($read_only_style bold)'
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
+format = '([\[$all_status$ahead_behind\]](bold overlay1) )'
 stashed = "[${count}*](green)" 
 modified = "[${count}+](yellow)" 
 deleted =  "[${count}-](red)" 
@@ -55,74 +50,20 @@ behind = "⇣${count}"
 untracked = "[${count}?](blue)" 
 staged = "[${count}+](green)" 
 
-[git_state]
-style =	"bold lavender"
-format = "[$state( $progress_current/$progress_total) ]($style)"
-rebase = "rebase"
-merge = "merge"	
-revert = "revert"	
-cherry_pick = "cherry"
-bisect = "bisect"	
-am = "am"	
-am_or_rebase = "am/rebase"
-
-# icon sets
-[aws]
-symbol = "  "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
 [git_branch]
-symbol = " "
+format = '[\[[$branch(:$remote_branch)](bold lavender)\]](bold overlay1) '
 
-[golang]
-symbol = " "
+[package]
+format = '[\[[󰏖 $version](bold peach)\]](bold overlay1) '
 
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[haskell]
-symbol = "λ "
-
-[nix_shell]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[ruby]
-symbol = " "
+[lua]
+format = '[\[[󰢱 $version](bold blue)\]](bold overlay1) '
 
 [rust]
-symbol = " "
+format = '[\[[ $version](red bold)\]](bold overlay1)'
 
-[scala]
-symbol = " "
-
-[shlvl]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
+[c]
+format = '[\[[ $version](bold blue)\]](bold overlay1)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
