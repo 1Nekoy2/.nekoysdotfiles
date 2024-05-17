@@ -13,7 +13,10 @@
 # #######################################################################################
 
 command_timeout = 1000
-right_format= """$time"""
+right_format= """
+$cmd_duration\
+$time\
+"""
 
 # Sets user-defined palette
 palette = "catppuccin_mocha"
@@ -28,7 +31,13 @@ disabled = false
 format = '[\[\]](bold blue) [\[[$hostname](bold blue)\]](bold overlay1) '
 
 [cmd_duration]
-disabled = true
+format = '[\[[$duration](italic yellow)\]](bold overlay1)'
+
+[time]
+disabled = false
+format = ' [\[[$time](subtext1)\]](bold overlay1)'
+time_format = "%R"
+utc_time_offset = "local"
 
 [character]
 success_symbol = "[-❯](text)"
@@ -54,12 +63,6 @@ ahead = "⇡${count}"
 behind = "⇣${count}"
 untracked = "[${count}?](blue)" 
 staged = "[${count}+](green)" 
-
-[time]
-disabled = false
-format = '[\[[$time](subtext1)\]](bold overlay1)'
-time_format = "%R"
-utc_time_offset = "local"
 
 [git_branch]
 format = '[\[[$branch(:$remote_branch)](bold lavender)\]](bold overlay1) '
