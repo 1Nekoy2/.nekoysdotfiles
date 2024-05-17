@@ -1,71 +1,83 @@
+## Exports
 
-# #######################################################################################
-#
-#
-#  ███████╗██╗███████╗██╗  ██╗
-#  ██╔════╝██║██╔════╝██║  ██║
-#  █████╗  ██║███████╗███████║
-#  ██╔══╝  ██║╚════██║██╔══██║
-#  ██║     ██║███████║██║  ██║
-#  ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
-#
-# By Nekoy
-# #######################################################################################
-
-## Exports 
-set fish_greeting                                 # Supresses fish's intro message
-set TERM "xterm-256color"                         # Sets the terminal type
-set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
-set -U zoxide_cmd "cd"
-
-## Path Variables
-set -Ux XDG_DATA_HOME "$HOME/.local/share"
-set -Ux XDG_CONFIG_HOME "$HOME/.config"
-set -Ux XDG_STATE_HOME "$HOME/.local/state"
-set -Ux XDG_CACHE_HOME "$HOME/.cache"
-
-## Universal exports
-set -Ux CALCHISTFILE "$XDG_CACHE_HOME/calc_history"
-set -Ux CARGO_HOME "$XDG_DATA_HOME/cargo"
-set -Ux CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
-set -Ux GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-set -Ux RUSTUP_HOME "$XDG_DATA_HOME/rustup"
-
-## fuzzy finder themeing 
-set -Ux FZF_DEFAULT_OPTS "\
+export TERM="xterm-256color"                      
+export EDITOR="nvim"                            
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export CALCHISTFILE="$XDG_CACHE_HOME/calc_history"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export FZF_DEFAULT_OPTS="\
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-# source 
-source "/home/nekoy/.local/share/cargo/env.fish"
+## Set the directory we want to store zinit and plugins
 
-## Manpager
-set -x MANPAGER "nvim +Man!"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-## On start up
-if status is-interactive
+## Download Zinit, if it's not there yet
 
-   run-on-start-up
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-end
+## Source/Load zinit
 
-if set -q KITTY_INSTALLATION_DIR
-    set --global KITTY_SHELL_INTEGRATION enabled
-    source "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish"
-    set --prepend fish_complete_path "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d"
-end
+source "${ZINIT_HOME}/zinit.zsh"
 
-# keybindings
-function fish_user_key_bindings
+## Source theme
+source "${XDG_DATA_HOME}/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 
-    #fish_default_key_bindings
-    fish_vi_key_bindings
 
-end
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# start up function
+# Add in snippets
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# History
+HISTSIZE=5000
+HISTFILE=$XDG_DATA_HOME/zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ## aliases
 
@@ -150,5 +162,8 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 # n/a
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
-## initialize Starship 
-starship init fish | source
+## Shell integrations
+
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(fzf --zsh)"
+eval "$(starship init zsh)"
