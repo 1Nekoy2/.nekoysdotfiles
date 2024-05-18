@@ -52,7 +52,6 @@ items = [
     "brightnessctl",
     #"pistol-git",
     "npm",
-    "fzf",
     "dragon-drop",
     "firefox",
     "fastfetch",
