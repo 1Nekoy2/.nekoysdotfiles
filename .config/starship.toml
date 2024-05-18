@@ -83,6 +83,12 @@ format = '[\[[ $version](bold blue)\]](bold overlay1)'
 [python]
 format = '[\[[ $version](bold blue)\]](bold overlay1)'
 
+[java]
+format = '[\[[ $version](bold red dimmed)\]](bold overlay1)'
+
+[golang]
+format = '[\[[󰟓 $version](bold cyan)\]](bold overlay1)'
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
