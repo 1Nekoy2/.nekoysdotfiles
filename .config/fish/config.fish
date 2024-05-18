@@ -17,6 +17,7 @@ set fish_greeting                                 # Supresses fish's intro messa
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "nvim"                                 # $EDITOR use nvim in terminal
 set -U zoxide_cmd "cd"
+set -U FZF_COMPLETE 2
 
 ## Path Variables
 set -Ux XDG_DATA_HOME "$HOME/.local/share"
@@ -151,4 +152,6 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 ## initialize Starship 
+
+fzf --fish | source
 starship init fish | source
