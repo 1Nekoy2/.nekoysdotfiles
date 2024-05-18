@@ -30,6 +30,9 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
+# Turn off all beeps
+unsetopt BEEP
+
 zinit cdreplay -q
 
 # vi mode
