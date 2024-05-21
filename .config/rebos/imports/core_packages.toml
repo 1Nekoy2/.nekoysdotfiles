@@ -1,6 +1,5 @@
 [managers.system]
 items = [
-    "lsd",
     "fish",
     "zsh",
     "fzf",

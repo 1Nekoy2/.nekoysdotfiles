@@ -80,11 +80,11 @@ alias eos-update="systemd-inhibit --what=idle eos-update"
 alias t="tmux"
 alias tm="tmux new-session -A -s main"
 
-# ls to lsd
-alias l="lsd"
-alias la="lsd -hA --group-dirs first"
-alias ll="lsd -hlA --group-dirs first"
-alias l.='lsd -A | grep -E "^."'
+# ls to exa
+alias l="exa --icons --group-directories-first"
+alias la="exa -ha --icons --group-directories-first"
+alias ll="exa -hlagBmU --icons --group-directories-first"
+alias lt="exa -haT --icons --level 5"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
