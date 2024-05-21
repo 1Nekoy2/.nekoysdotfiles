@@ -1,5 +1,18 @@
-/* The css styles are supposed to represent how the modules look 
-* starting from left to right as closely as possible*/
+/*
+# #######################################################################################
+#
+#
+#  ███████╗████████╗██╗   ██╗██╗     ███████╗
+#  ██╔════╝╚══██╔══╝╚██╗ ██╔╝██║     ██╔════╝
+#  ███████╗   ██║    ╚████╔╝ ██║     █████╗  
+#  ╚════██║   ██║     ╚██╔╝  ██║     ██╔══╝  
+#  ███████║   ██║      ██║   ███████╗███████╗
+#  ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝
+#                                            
+# by Nekoy
+# #######################################################################################
+*/
+
 
 @import url("./Theme/mocha.css");
 
@@ -15,6 +28,10 @@ window#waybar {
     color: @text;
 }
 
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
 tooltip {
     background-color: @base;
     color: @text;
@@ -23,42 +40,61 @@ tooltip {
 
 /* Left modules */
 
-#custom-logo,
-#custom-launcher,
 #custom-wallpaper,
 #tray,
 #window {
-    background: @base;
-    border-radius: 8px;
-    padding: 0px 10px;
-    margin: 3px 0px;
+    background-color: @base;
+    color: @text;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Overwritting the previous padding style on 'custom-logo' 
 * to give proper padding to nerd font icon */
-#custom-logo {
-    padding: 0px 15px 0px 10px;
+#custom-launcher {
+    background-color: @base;
+    color: @text;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-right: 1px;
+    padding-left: 14px;
+    padding-right: 9px;
 }
 
 /* If no windows are present on the screen,
 * this module will be transparent */
 window#waybar.empty #window {
     background-color: transparent;
+    border: none;
 }
 
 /* Center modules */
 
 #workspaces {
     background: @base;
-    border-radius: 8px;
-    padding: 0px 5px;
-    margin: 4px 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #workspaces button {
     padding: 0px 9px;
     margin: 6px 2px;
-    border-radius: 20px;
+    border-radius: 10px;
     background: @subtext0;
     color: @surface2;
     transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
@@ -76,12 +112,7 @@ window#waybar.empty #window {
 
 /* Right modules */
 
-#custom-notification{
-    background: @base;
-    border-radius: 8px;
-    padding: 0px 10px;
-    margin: 3px 0px;
-}
+
 
 /* These modules are children of group/system */
 #battery,
@@ -95,14 +126,40 @@ window#waybar.empty #window {
 
 /* group/system */
 #system {
-    background: @base;
-    border-radius: 8px;
-    margin: 3px 0px;
+    background-color: @base;
+    color: @text;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#custom-notification{
+    background-color: @base;
+    color: @text;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-right: 1px;
+    padding-left: 14px;
+    padding-right: 9px;
 }
 
 #clock {
-    background: @base;
-    border-radius: 8px;
-    padding: 0px 10px;
-    margin: 3px 0px;
+    background-color: @base;
+    color: @text;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    border: none;
+    border-bottom: 8px solid @mantle;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

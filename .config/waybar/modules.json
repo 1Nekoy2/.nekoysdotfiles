@@ -15,13 +15,13 @@
   // Left modules
 
   "custom/launcher": {
-    "format": "󰣇",
-    "on-click": "~/.config/rofi/app/app-launcher.sh",
+    "format": " ",
+    "on-click": "pkill rofi || ~/.config/rofi/app/app-launcher.sh",
     "tooltip": false
   },
 
   "custom/wallpaper": {
-    "format": "<span font='13' rise='-1000'> </span> Wallpapers",
+    "format": "󰸉 Wallpapers",
     "on-click": "~/.config/rofi/wallpaper/wallpaper-select.sh",
     "interval": 86400, // once every day
     "tooltip": false
@@ -34,7 +34,6 @@
 
   "hyprland/window": {
     "rewrite": {
-      "(.*) - Firefox": "$1",
       "(.*) - kitty": "[$1]"
     },
     "separate-outputs": true
@@ -54,7 +53,7 @@
 
   "custom/notification": {
     "return-type": "json",
-    "exec": "~/.config/dotfiles-scripts/notification.sh",
+    "exec": "~/.config/waybar/scripts/notification.sh",
     "on-click": "dunstctl set-paused toggle",
     "restart-interval": 1
   },
@@ -64,20 +63,20 @@
   "network": {
     "on-click": "kitty --class network-floating -e nmtui",
     "format-disconnected": "󰖪 0%",
-    "format-ethernet": "<span font='13' rise='-1000'>󰈀</span> 100%",
+    "format-ethernet": "󰈀 100%",
     "format-linked": "{ifname} (No IP)",
-    "format-wifi": "<span font='13' rise='-1000'> </span> {signalStrength}%",
+    "format-wifi": " {signalStrength}%",
     "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
   },
 
   "memory": {
-    "format": "<span font='13' rise='-1000'>󰍛</span> {used} GiB",
-    "format-alt": "<span font='13' rise='-1000'>󰍛</span> {percentage}%",
+    "format": "󰍛 {used} GiB",
+    "format-alt": "󰍛 {percentage}%",
     "interval": 5
   },
 
   "cpu": {
-    "format": "<span font='13' rise='-1000'>󰻠</span> {usage}%",
+    "format": "󰻠 {usage}%",
     "format-alt": "󰻠 {avg_frequency} GHz",
     "interval": 1
   },
@@ -86,9 +85,9 @@
     "format": "{icon} {volume}%",
     "format-icons": {
       "default": [
-        "<span font='13' rise='-1000'>󰕿</span>",
-        "<span font='13' rise='-1000'>󰖀</span>",
-        "<span font='13' rise='-1000'>󰕾</span>"
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     },
     "format-muted": "󰝟",
@@ -104,12 +103,6 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "states": [0, 50],
-    "format-icons": ["", ""]
-  },
 
   "battery": {
     "on-click": "auto-cpufreq-gtk",
