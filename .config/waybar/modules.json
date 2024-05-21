@@ -63,21 +63,21 @@
   "network": {
     "on-click": "kitty --class network-floating -e nmtui",
     "format-disconnected": "󰖪 0%",
-    "format-ethernet": "󰈀 100%",
+    "format-ethernet": "󰌗 100%",
     "format-linked": "{ifname} (No IP)",
-    "format-wifi": " {signalStrength}%",
+    "format-wifi": "  {signalStrength}%",
     "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
   },
 
   "memory": {
-    "format": "󰍛 {used} GiB",
-    "format-alt": "󰍛 {percentage}%",
+    "format": "  {used} GiB",
+    "format-alt": "  {percentage}%",
     "interval": 5
   },
 
   "cpu": {
-    "format": "󰻠 {usage}%",
-    "format-alt": "󰻠 {avg_frequency} GHz",
+    "format": " {usage}%",
+    "format-alt": " {avg_frequency} GHz",
     "interval": 1
   },
 
