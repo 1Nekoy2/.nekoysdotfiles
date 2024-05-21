@@ -65,7 +65,10 @@ untracked = "[${count}?](blue)"
 staged = "[${count}+](green)" 
 
 [git_branch]
-format = '[\[[$branch(:$remote_branch)](bold lavender)\]](bold surface2) '
+format = '[\[[$branch([:$remote_branch](lavender))](bold lavender)\]](bold surface2) '
+
+[git_commit]
+format = '[\[[$hash$tag](bold green)\]](bold surface2) '
 
 # use fe
 [package]
@@ -88,6 +91,9 @@ format = '[\[[ $version](bold red dimmed)\]](bold surface2)'
 
 [golang]
 format = '[\[[󰟓 $version](bold cyan)\]](bold surface2)'
+
+[zig]
+format = '[\[[ $version](bold yellow)\]](bold surface2)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
