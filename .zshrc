@@ -86,6 +86,9 @@ alias la="exa -ha --icons --group-directories-first"
 alias ll="exa -hlagBmU --icons --group-directories-first"
 alias lt="exa -haT --icons --level 5"
 
+# cat to bat
+alias cat="bat"
+
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
