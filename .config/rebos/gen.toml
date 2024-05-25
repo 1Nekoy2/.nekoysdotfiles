@@ -51,6 +51,7 @@ items = [
     "fastfetch",
     "brightnessctl",
     #"pistol-git",
+    "merkuro",
     "npm",
     "dragon-drop",
     "firefox",
@@ -62,6 +63,9 @@ items = [
 [managers.cargo]
 items = [
     "uwuify",   
+    "bacon",
+    "irust",
+    "speedtest-rs",
     "cargo-info",
     "cargo-update",
     "cargo-expand",
