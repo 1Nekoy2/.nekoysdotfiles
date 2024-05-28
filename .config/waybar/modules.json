@@ -70,8 +70,8 @@
   },
 
   "memory": {
-    "format": "  {used} GiB",
-    "format-alt": "  {percentage}%",
+    "format": "  {percentage}%",
+    "format-alt": "  {used} GiB",
     "interval": 5
   },
 
