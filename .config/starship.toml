@@ -65,7 +65,7 @@ untracked = "[${count}?](blue)"
 staged = "[${count}+](green)" 
 
 [git_branch]
-format = '[\[[$branch([:$remote_branch](lavender))](bold lavender)\]](bold surface2) '
+format = '[\[[$branch([:$remote_branch](green))](bold green)\]](bold surface2) '
 
 [git_commit]
 format = '[\[[$hash$tag](bold green)\]](bold surface2) '
