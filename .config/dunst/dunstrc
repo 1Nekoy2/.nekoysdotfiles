@@ -19,9 +19,9 @@
     enable_recursive_icon_lookup = true
     history_length = 50
     corner_radius = 3
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 [urgency_low]
     background = "#1e1e2e"
@@ -41,4 +41,4 @@
     timeout = 0
     override_pause_level = 60
 
-# vim: ft=cfg
+# vim: ft=cfglavender
