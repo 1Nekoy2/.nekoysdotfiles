@@ -13,29 +13,28 @@
 # #######################################################################################
 */
 
-
 @import url("./Theme/mocha.css");
 
 * {
-    border: none;
-    font-family: "JetBrainsMono Nerd Font";
+  border: none;
+  font-family: "JetBrainsMono Nerd Font";
 }
 
 /* Overarching styles */
 
 window#waybar {
-    background: transparent;
-    color: @text;
+  background: transparent;
+  color: @text;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 tooltip {
-    background-color: @base;
-    color: @text;
-    border-radius: 5px;
+  background-color: @base;
+  color: @text;
+  border-radius: 5px;
 }
 
 /* Left modules */
@@ -43,76 +42,79 @@ tooltip {
 #custom-wallpaper,
 #tray,
 #window {
-    background-color: @base;
-    color: @text;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-right: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+  background-color: @base;
+  color: @text;
+  font-family:
+    JetBrainsMono Nerd Font,
+    monospace;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Overwritting the previous padding style on 'custom-logo' 
 * to give proper padding to nerd font icon */
 #custom-launcher {
-    background-color: @base;
-    color: @text;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-right: 1px;
-    padding-left: 14px;
-    padding-right: 9px;
+  background-color: @base;
+  color: @text;
+  font-family:
+    JetBrainsMono Nerd Font,
+    monospace;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 1px;
+  padding-left: 14px;
+  padding-right: 9px;
 }
 
 /* If no windows are present on the screen,
 * this module will be transparent */
 window#waybar.empty #window {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 /* Center modules */
 
 #workspaces {
-    background: @base;
-    border-radius: 5px;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  background: @base;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #workspaces button {
-    padding: 0px 9px;
-    margin: 6px 2px;
-    border-radius: 10px;
-    background: @subtext0;
-    color: @surface2;
-    transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
+  padding: 0px 9px;
+  margin: 6px 2px;
+  border-radius: 10px;
+  background: @subtext0;
+  color: @surface2;
+  transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
 }
 
 #workspaces button.active {
-    margin: 6px 2px;
-    padding: 0px 35px;
-    background-color: @text;
+  margin: 6px 2px;
+  padding: 0px 35px;
+  background-color: @text;
 }
 
 #workspaces button:hover {
-    background-color: @lavender;
+  background-color: @lavender;
 }
 
 /* Right modules */
-
-
 
 /* These modules are children of group/system */
 #battery,
@@ -121,45 +123,56 @@ window#waybar.empty #window {
 #disk,
 #memory,
 #pulseaudio {
-    margin: 0px 10px;
+  margin: 0px 10px;
 }
 
 /* group/system */
 #system {
-    background-color: @base;
-    color: @text;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-right: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+  background-color: @base;
+  color: @text;
+  font-family:
+    JetBrainsMono Nerd Font,
+    monospace;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#custom-notification{
-    background-color: @base;
-    color: @text;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-right: 1px;
-    padding-left: 14px;
-    padding-right: 9px;
+#custom-notification,
+#idle_inhibitor {
+  margin: 0px 5px;
+}
+
+#toggles {
+  background-color: @base;
+  color: @text;
+  font-family:
+    JetBrainsMono Nerd Font,
+    monospace;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 1px;
+  padding-left: 14px;
+  padding-right: 10px;
 }
 
 #clock {
-    background-color: @base;
-    color: @text;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    border: none;
-    border-bottom: 8px solid @mantle;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-right: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+  background-color: @base;
+  color: @text;
+  font-family:
+    JetBrainsMono Nerd Font,
+    monospace;
+  border: none;
+  border-bottom: 8px solid @mantle;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  margin-right: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

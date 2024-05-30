@@ -32,6 +32,24 @@
     "spacing": 7
   },
 
+  "privacy": {
+    "icon-spacing": 7,
+    "icon-size": 17,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 20
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 20
+      }
+    ]
+  },
+
   "hyprland/window": {
     "rewrite": {
       "(.*) - kitty": "[$1]"
@@ -58,6 +76,14 @@
     "restart-interval": 1
   },
 
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰒲 ",
+      "deactivated": "󰒳 "
+    }
+  },
+
   // group/system
 
   "network": {
@@ -66,7 +92,7 @@
     "format-ethernet": "󰌗 100%",
     "format-linked": "{ifname} (No IP)",
     "format-wifi": "  {signalStrength}%",
-    "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
+    "tooltip-format": "Connected to {essid}"
   },
 
   "memory": {
@@ -84,24 +110,11 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-icons": {
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "format-muted": "󰝟",
     "on-click": "pavucontrol",
     "scroll-step": 5
-  },
-
-  "clock": {
-    "interval": 1,
-    "format": " {:%H:%M:%S}",
-    "format-alt": " {:%H:%M %b %d %a}",
-    "tooltip": "true",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click-right": "merkuro-calendar"
   },
 
   "battery": {
@@ -120,6 +133,15 @@
     "tooltip-format": "{timeTo}\nPower draw: {power}W\nBattery health: {health}"
   },
 
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "format-alt": " {:%H:%M %b %d %a}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click-right": "merkuro-calendar"
+  },
+
   // Groups
 
   "group/system": {
@@ -129,11 +151,7 @@
 
   "group/toggles": {
     "orientation": "horizontal",
-    "modules": ["custom/notification", ""]
+    "modules": ["custom/notification", "idle_inhibitor"]
   },
 
-  "group/ltray": {
-    "orientation": "horizontal",
-    "modules": ["custom/notification", ""]
-  }
 }
