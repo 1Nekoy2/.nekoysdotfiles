@@ -104,7 +104,6 @@
     "on-click-right": "merkuro-calendar"
   },
 
-
   "battery": {
     "on-click": "auto-cpufreq-gtk",
     "bat": "BAT1",
@@ -126,5 +125,15 @@
   "group/system": {
     "orientation": "horizontal",
     "modules": ["network", "memory", "cpu", "pulseaudio", "battery"]
+  },
+
+  "group/toggles": {
+    "orientation": "horizontal",
+    "modules": ["custom/notification", ""]
+  },
+
+  "group/ltray": {
+    "orientation": "horizontal",
+    "modules": ["custom/notification", ""]
   }
 }
