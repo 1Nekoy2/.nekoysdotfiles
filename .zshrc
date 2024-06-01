@@ -73,8 +73,8 @@ alias nv="nvim"
 alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
 # package menagers 
-alias paru="systemd-inhibit --what=idle paru"
-alias eos-update="systemd-inhibit --what=idle eos-update"
+alias paru='systemd-inhibit --what=idle --why="System is updating" paru'
+alias eos-update='systemd-inhibit --what=idle --why="System is updating" eos-update'
 
 # tmux
 alias t="tmux"
@@ -120,14 +120,9 @@ alias playmp4='vlc *.mp4'
 # Rebos
 alias rebl='rebos gen list'
 alias rebc='rebos gen commit'
-alias rebb='systemd-inhibit --what=idle rebos gen current build'
-alias rebsync="systemd-inhibit --what=idle rebos managers sync"
-alias rebupgrade="systemd-inhibit --what=idle rebos managers upgrade"
-
-# switch between shells
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /usr//bin/fish && echo 'Now log out.'"
+alias rebb='systemd-inhibit --what=idle --why="Rebos is building" rebos gen current build'
+alias rebsync='systemd-inhibit --what=idle --why="packages are syncing" rebos managers sync'
+alias rebupgrade='systemd-inhibit --what=idle --why="System is updating" rebos managers upgrade'
 
 # shortend commands
 alias icat="kitten icat"
@@ -150,3 +145,4 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+eval "$(thefuck --alias fuck)"

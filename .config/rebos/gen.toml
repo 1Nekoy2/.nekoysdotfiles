@@ -6,13 +6,11 @@
 imports = [
     "core_packages",
     #"programing_languages",
-    "hyprland", 
+    "hyprland",
 ]
 
 [managers.serv_startup]
-items = [
-  "sddm",
-]
+items = ["sddm"]
 
 # Packages to be installed via the native package manager.
 [managers.system]
@@ -52,6 +50,7 @@ items = [
     "brightnessctl",
     #"pistol-git",
     "merkuro",
+    "thefuck",
     "npm",
     "dragon-drop",
     "firefox",
@@ -62,7 +61,7 @@ items = [
 # Packages to be installed via Cargo.
 [managers.cargo]
 items = [
-    "uwuify",   
+    "uwuify",
     "bacon",
     "irust",
     "speedtest-rs",
