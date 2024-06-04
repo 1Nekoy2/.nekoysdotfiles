@@ -13,7 +13,7 @@
 # #######################################################################################
 
 command_timeout = 1000
-right_format= """
+right_format = """
 $cmd_duration\
 $time\
 """
@@ -50,19 +50,19 @@ vimcmd_replace_one_symbol = "[[](red) -❯](text)"
 [directory]
 read_only = '[]'
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
+truncate_to_repo = true                                                                    # truncates directory to root folder if in github repo
 format = '[\[[$path](bold overlay1)\]](bold surface2) [$read_only]($read_only_style bold)'
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]](bold surface2) )'
-stashed = "[${count}*](green)" 
-modified = "[${count}+](yellow)" 
-deleted =  "[${count}-](red)" 
-conflicted =  "[${count}~](red)" 
+stashed = "[${count}*](green)"
+modified = "[${count}+](yellow)"
+deleted = "[${count}-](red)"
+conflicted = "[${count}~](red)"
 ahead = "⇡${count}"
 behind = "⇣${count}"
-untracked = "[${count}?](blue)" 
-staged = "[${count}+](green)" 
+untracked = "[${count}?](blue)"
+staged = "[${count}+](green)"
 
 [git_branch]
 format = '[\[[$branch([:$remote_branch](green))](bold green)\]](bold surface2) '
