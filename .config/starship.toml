@@ -49,6 +49,7 @@ vimcmd_replace_one_symbol = "[[](red) -❯](text)"
 
 [directory]
 read_only = '[]'
+truncation_symbol = '…/'
 truncation_length = 10
 truncate_to_repo = true                                                                    # truncates directory to root folder if in github repo
 format = '[\[[$path](bold overlay1)\]](bold surface2) [$read_only]($read_only_style bold)'
@@ -82,6 +83,9 @@ format = '[\[[ $version](red bold)\]](bold surface2)'
 
 [c]
 format = '[\[[ $version](bold blue)\]](bold surface2)'
+
+[cmake]
+format = '[\[[△ $version](bold blue)\]](bold surface2)'
 
 [python]
 format = '[\[[ $version](bold blue)\]](bold surface2)'
