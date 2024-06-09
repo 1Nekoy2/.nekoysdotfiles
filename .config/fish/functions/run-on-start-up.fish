@@ -10,13 +10,13 @@ function run-on-start-up
         case 4
             seq 64 | sort --random-sort | spark | lolcat
         case 5
-            ~/.config/dotfiles-scripts/colorbars
+            colorbars
         case 6
-            ~/.config/dotfiles-scripts/colortest
+            colortest
         case 7
-            ~/.config/dotfiles-scripts/colortest-slim
+            colortest-slim
         case 8
-            ~/.config/dotfiles-scripts/colorwheel
+            colorwheel
         case '*'
             echo "error" 
     end
