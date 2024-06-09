@@ -83,8 +83,9 @@ alias tm="tmux new-session -A -s main"
 # ls to exa
 alias l="exa --icons --group-directories-first"
 alias la="exa -ha --icons --group-directories-first"
-alias ll="exa -hlagBmU --icons --group-directories-first"
+alias ll="exa -hlagBmU --icons --git --group-directories-first"
 alias lt="exa -haT --icons --level 5"
+alias lT="exa -lhaT --git --icons --level 5"
 
 # cat to bat
 alias cat="bat"
@@ -133,8 +134,6 @@ alias nf="fastfetch"
 
 # fun
 alias catsay="fortune | cowsay -f kitty | lolcat"
-alias flair="~/.config/dotfiles-scripts/flair/flair.sh"
-alias cflair="~/.config/dotfiles-scripts/flair/flair.sh * | wl-copy"
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 # n/a
