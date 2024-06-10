@@ -11,6 +11,9 @@
     progress_bar_max_width = 400
     horizontal_padding = 30
     frame_width = 3
+    min_icon_size = 50
+    max_icon_size = 60
+    icon_path = $HOME/.local/share/icons/dunst
     gap_size = 10
     sort = yes
     frame_color = "#89b4fa"
