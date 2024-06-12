@@ -1,14 +1,12 @@
-imports = [
-    "wayland",
-]
+imports = ["wayland"]
 
 [managers.system]
 items = [
-    "hyprland",
-    "hyprlock",
-    "hypridle",
-    "xdg-desktop-portal-hyprland",
-    "hyprpicker",
-    "hyprcursor",
-    "polkit-gnome",
+  "hyprland",
+  "hyprlock",
+  "hypridle",
+  "xdg-desktop-portal-hyprland",
+  "hyprpicker",
+  "hyprcursor",
+  "polkit-gnome",
 ]

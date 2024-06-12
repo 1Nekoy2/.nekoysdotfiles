@@ -1,4 +1,2 @@
 [managers.system]
-items = [
-  "auto-cpufreq",
-]
+items = ["auto-cpufreq"]

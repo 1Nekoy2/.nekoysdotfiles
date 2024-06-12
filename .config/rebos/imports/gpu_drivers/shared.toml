@@ -1,4 +1,2 @@
 [managers.system]
-items = [
-  "libva-mesa-driver",
-]
+items = ["libva-mesa-driver"]

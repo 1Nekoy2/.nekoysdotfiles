@@ -6,7 +6,7 @@
 imports = ["core_packages", "programming_languages", "hyprland"]
 
 [managers.serv_startup]
-items = ["sddm"]
+items = ["greetd"]
 
 # Packages to be installed via the native package manager.
 [managers.system]
@@ -22,7 +22,6 @@ items = [
   "wine",
   "stow",
   "lf",
-  "sddm",
   "tmux",
   "kitty",
   "fish",

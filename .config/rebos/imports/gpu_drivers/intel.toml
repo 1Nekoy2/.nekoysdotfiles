@@ -1,6 +1,4 @@
-imports = [
-  "gpu_drivers/shared",
-]
+imports = ["gpu_drivers/shared"]
 
 [managers.system]
 items = [
