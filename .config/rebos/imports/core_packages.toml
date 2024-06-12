@@ -7,7 +7,6 @@ items = [
   "parted",
   "git",
   "zip",
-  "greetd",
   "unzip",
   "clang",
   "gcc",

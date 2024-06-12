@@ -1,4 +1,4 @@
-imports = ["wayland"]
+imports = ["wayland", "display_manager"]
 
 [managers.system]
 items = [
