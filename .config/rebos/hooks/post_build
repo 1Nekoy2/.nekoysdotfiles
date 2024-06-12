@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo cp ~/.config/rebos/system_configs/greetd.toml /etc/greetd/config.toml
+
 if pacman -Qs firewalld > /dev/null 2>&1; then
   sudo systemctl disable firewalld --now
   sudo pacman -Rns firewalld
