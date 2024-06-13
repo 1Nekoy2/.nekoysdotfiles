@@ -1,2 +1,2 @@
 [managers.system]
-items = ["greetd", "greetd-regreet"]
+items = ["greetd", "greetd-regreet", "swayidle"]
