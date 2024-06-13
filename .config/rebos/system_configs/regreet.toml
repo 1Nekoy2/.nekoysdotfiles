@@ -1,3 +1,8 @@
+[background]
+# Path to the background image
+path = "/usr/share/backgrounds/greeter.jpg"
+fit = "Cover"
+
 [env]
 ENV_VARIABLE = "value"
 

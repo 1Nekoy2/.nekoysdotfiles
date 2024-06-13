@@ -3,6 +3,7 @@
 sudo cp ~/.config/rebos/system_configs/greetd.toml /etc/greetd/config.toml
 sudo cp ~/.config/rebos/system_configs/hyprland.conf /etc/greetd/hyprland.conf
 sudo cp ~/.config/rebos/system_configs/regreet.toml /etc/greetd/regreet.toml
+sudo cp ~/.config/rebos/system_configs/greeter.jpg /usr/share/backgrounds/greeter.jpg 
 
 if pacman -Qs firewalld > /dev/null 2>&1; then
   sudo systemctl disable firewalld --now
