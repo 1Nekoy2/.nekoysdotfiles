@@ -3,7 +3,7 @@
 export TERM="xterm-256color"                      
 
 # Deafult apps
-export EDITOR="nvim"                            
+export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
@@ -22,6 +22,7 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GOPATH="$XDG_DATA_HOME/go"
 
 # Path edits
 . "/home/nekoy/.local/share/cargo/env"
