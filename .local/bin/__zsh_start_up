@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$((1 + $RANDOM % 6))" in
+    1)     
+        fortune | cowsay -f kitty | lolcat
+    ;;
+    2)
+        fortune | uwuify | cowsay -f kitty | lolcat
+    ;;
+    3)
+        fastfetch
+    ;;
+    4)
+        colortest
+    ;;
+    5)
+        colortest-slim
+    ;;
+    6)
+        colorwheel
+    ;;
+    *)
+        echo "error"
+    ;;
+esac
+

@@ -59,6 +59,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# execute function on start up
+__zsh_start_up
+
 ## aliases
 
 # navigation
