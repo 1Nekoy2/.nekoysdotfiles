@@ -1,5 +1,9 @@
 [managers.system]
 items = [
+  "linux-zen",
+  "linux-zen-headers",
+  "lld",
+  "llvm",
   "fish",
   "zsh",
   "fzf",
