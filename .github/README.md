@@ -4,23 +4,26 @@ This directory contains the dotfiles for my system
 
 ## Preview
 
-<img src="https://github.com/1Nekoy2/dotfiles/blob/main/.github/preview.png">
+<img src="https://github.com/1Nekoy2/.nekoysdotfiles/blob/master/.github/preview.png">
 
 ## Requirements
 
 Ensure you have the following installed on your system
 
 ```
-sudo pacman -S paru rustup fish stow
+sudo pacman -S paru rustup zsh stow
 ```
 
 ## Installation
 
-Instal the dotfiles 
+Instal the dotfiles
+
 ```
 git clone --recurse-submodules https://github.com/1Nekoy2/.nekoysdotfiles.git ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
 ```
+
 or
+
 ```
 git clone --recurse-submodules git@github.com:1Nekoy2/.nekoysdotfiles.git ~/.nekoysdotfiles && cd ~/.nekoysdotfiles
 ```
@@ -31,40 +34,50 @@ then use GNU stow to create symlinks
 stow .
 ```
 
-start fish to make rust install in the right place
+Start zsh to load environmental variables
+
 ```
-fish
+zsh
 ```
 
 now install default rust envirament with
+
 ```
 rustup default stable
 ```
 
 install rebos
+
 ```
 cargo install rebos
 ```
 
 run rebos setup
+
 ```
 rebos setup
 ```
 
 now commit changes
+
 ```
 rebc "initial"
 ```
-or 
+
+or
+
 ```
 rebos gen commit "initial"
 ```
 
 install all other needed packages
+
 ```
 rebb
 ```
+
 or
+
 ```
 rebos gen current build
 ```
