@@ -77,7 +77,7 @@ alias nvi="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs n
 
 # package menagers 
 alias paru='systemd-inhibit --what=idle --why="System is updating" paru'
-alias eos-update='systemd-inhibit --what=idle --why="System is updating" eos-update'
+alias sysupgrade='rebsync && rebupgrade'
 
 # tmux
 alias t="tmux"

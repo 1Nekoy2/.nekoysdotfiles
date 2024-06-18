@@ -136,7 +136,7 @@
   "clock": {
     "interval": 1,
     "format": " {:%H:%M:%S}",
-    "format-alt": " {:%H:%M %b %d %a}",
+    "format-alt": " {:%I:%M %p %b %d %a}",
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click-right": "merkuro-calendar"
@@ -152,6 +152,5 @@
   "group/toggles": {
     "orientation": "horizontal",
     "modules": ["custom/notification", "idle_inhibitor"]
-  },
-
+  }
 }
