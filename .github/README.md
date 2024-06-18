@@ -11,7 +11,7 @@ This directory contains the dotfiles for my system
 Ensure you have the following installed on your system
 
 ```
-sudo pacman -S paru rustup zsh stow
+sudo pacman -S git paru rustup zsh stow
 ```
 
 ## Installation
@@ -84,4 +84,5 @@ rebos gen current build
 
 ## Source
 
-https://www.youtube.com/watch?v=y6XCebnB9gs&t=223s
+[stow](https://www.youtube.com/watch?v=y6XCebnB9gs&t) <br />
+[rebos](https://www.youtube.com/watch?v=QCrRT-ZjwVQ&t)
