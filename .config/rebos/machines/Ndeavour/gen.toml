@@ -3,8 +3,4 @@
 # --------------------- #
 
 # Other generation files to import. (Example: intensive_apps -> ~/.config/rebos/imports/intensive_apps.toml)
-imports = [
-  #"laptop",
-  "gaming",
-  "gpu_drivers/nvidia",
-]
+imports = ["laptop", "gaming", "gpu_drivers/nvidia", "gpu_drivers/intel"]

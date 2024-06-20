@@ -1,2 +1,4 @@
+imports = ["gpu_drivers/shared"]
+
 [managers.system]
 items = ["nvidia-dkms", "nvidia-utils", "nvidia-settings"]

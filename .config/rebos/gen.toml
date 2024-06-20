@@ -73,4 +73,5 @@ items = [
   "wiki-tui",
   "bacon",
   "mprocs",
+  "du-dust",
 ]
