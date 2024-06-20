@@ -1,0 +1,4 @@
+imports = ["virt-manager", "virtualbox"]
+
+[managers.system]
+items = ["blender", "waydroid", "lutris"]
