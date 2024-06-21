@@ -87,8 +87,8 @@ alias tm="tmux new-session -A -s main"
 alias l="exa --icons --group-directories-first"
 alias la="exa -ha --icons --group-directories-first"
 alias ll="exa -hlagBmU --icons --git --group-directories-first"
-alias lt="exa -haT --icons --level 5"
-alias lT="exa -lhaT --git --icons --level 5"
+alias lt='exa -haT --group-directories-first --ignore-glob=".git" --icons --level 5'
+alias lT='exa -lhaT --group-directories-first --ignore-glob=".git" --git --icons --level 5'
 
 # cat to bat
 alias cat="bat"
