@@ -53,6 +53,7 @@ items = [
   "thefuck",
   "npm",
   "dragon-drop",
+  "xdg-terminal-exec-git",
   "firefox",
   "fastfetch",
   "syncthing",
