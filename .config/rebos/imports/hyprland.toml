@@ -5,6 +5,8 @@ items = [
   "hyprland",
   "hyprlock",
   "hypridle",
+  "hyprswitch",
+  "--mflags '--nocheck' gtk4-layer-shell",
   "xdg-desktop-portal",
   "xdg-desktop-portal-gtk",
   "xdg-desktop-portal-hyprland",
