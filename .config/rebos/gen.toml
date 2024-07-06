@@ -57,6 +57,7 @@ items = [
   "firefox",
   "fastfetch",
   "syncthing",
+  "mullvad-vpn",
 ]
 
 # Packages to be installed via Cargo.
