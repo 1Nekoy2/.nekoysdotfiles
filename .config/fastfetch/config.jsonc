@@ -13,27 +13,27 @@
         {
             "type": "host",
             "key": "╭─󰌢",
-            "keyColor": "green"
+            "keyColor": "red"
         },
         {
             "type": "cpu",
             "key": "├─󰻠",
-            "keyColor": "green"
+            "keyColor": "red"
         },
         {
             "type": "gpu",
             "key": "├─󰍛",
-            "keyColor": "green"
+            "keyColor": "red"
         },
         {
             "type": "disk",
             "key": "├─",
-            "keyColor": "green"
+            "keyColor": "red"
         },
         {
             "type": "memory",
             "key": "╰─󰑭",
-            "keyColor": "green"
+            "keyColor": "red"
         },
                 
         "break",
@@ -41,22 +41,22 @@
         {
             "type": "shell",
             "key": "╭─",
-            "keyColor": "yellow"
+            "keyColor": "green"
         },
         {
             "type": "terminal",
             "key": "├─",
-            "keyColor": "yellow"
+            "keyColor": "green"
         },
         {
             "type": "de",
             "key": "├─",
-            "keyColor": "yellow"
+            "keyColor": "green"
         },
         {
             "type": "wm",
             "key": "╰─",
-            "keyColor": "yellow"
+            "keyColor": "green"
         },
 
         "break",
