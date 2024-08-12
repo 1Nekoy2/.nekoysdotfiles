@@ -47,6 +47,7 @@ items = [
   "mpv",
   "imv",
   "fastfetch",
+  "kdeconnect",
   "brightnessctl",
   "pistol-git",
   "merkuro",
@@ -57,7 +58,6 @@ items = [
   "firefox",
   "fastfetch",
   "syncthing",
-  "mullvad-vpn",
 ]
 
 # Packages to be installed via Cargo.
